@@ -1,0 +1,16 @@
+{
+	"name": "AdfInsurance1",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true,
+			"isExplicitlySet": false
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1748679e-b4cd-41a0-af78-8634a8625e11",
+		"tenantId": "2ac8093b-db22-4b8c-8aa6-9e049df3840f"
+	}
+}

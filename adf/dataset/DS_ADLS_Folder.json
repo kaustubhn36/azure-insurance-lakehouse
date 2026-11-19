@@ -1,0 +1,30 @@
+{
+	"name": "DS_ADLS_Folder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_CONN_GENK2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"folderPath": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Partner_Settlement_Datasets"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().folderPath",
+					"type": "Expression"
+				},
+				"fileSystem": "settlements"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

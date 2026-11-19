@@ -1,0 +1,33 @@
+{
+	"name": "Parquet_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_CONN_GEN2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tableName": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Insurance Datasets"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().tableName",
+					"type": "Expression"
+				},
+				"folderPath": "bronze",
+				"fileSystem": "claim-documents"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

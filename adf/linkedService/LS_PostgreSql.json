@@ -1,0 +1,28 @@
+{
+	"name": "LS_PostgreSql",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "PostgreSqlV2",
+		"typeProperties": {
+			"server": "localhost",
+			"port": 5432,
+			"database": "insurance_oltp",
+			"username": "postgres",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_AzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "postgres-local-passwored"
+			},
+			"sslMode": 2,
+			"authenticationType": "Basic"
+		},
+		"connectVia": {
+			"referenceName": "SHIR-LOCAL-Postgres",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
